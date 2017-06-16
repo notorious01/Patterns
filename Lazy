@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+ 
+class Lazy
+{
+public:
+    Lazy( ) : computed(false) {}
+    int get()
+    {
+        if( !computed )
+        {
+            value = 42; // какие-то сложные вычисления 
+            computed = true;
+        }
+        return value;
+    }
+private:
+    bool computed;
+    int value;
+};
+ 
+int main()
+{
+    Lazy l;
+ 
+    std::cout << l.get() << std::endl;
+ 
+    std::system( "pause" ); 
+}
